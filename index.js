@@ -2,6 +2,10 @@ const express = require("express");
 
 const app = express();
 
+app.set("view engine", "ejs");
+
+console.log(app.get("view engine"));
+
 const path = require("path");
 
 const userRoutes = require("./routes/user");
