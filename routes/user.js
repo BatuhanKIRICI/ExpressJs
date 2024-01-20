@@ -19,6 +19,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
       image: "1.jpeg",
       homePage: true,
+      confirmed: true,
     },
     {
       blogid: 2,
@@ -27,6 +28,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
       image: "2.jpeg",
       homePage: true,
+      confirmed: false,
     },
     {
       blogid: 3,
@@ -35,6 +37,7 @@ const data = {
         "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
       image: "3.jpeg",
       homePage: false,
+      confirmed: true,
     },
   ],
 };
