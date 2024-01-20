@@ -4,19 +4,13 @@ const app = express();
 
 const path = require("path");
 
+const userRoutes = require("./routes/user");
+const adminRoutes = require("./routes/admin");
+
 app.use("/libs", express.static(path.join(__dirname, "node_modules")));
 app.use("/static", express.static(path.join(__dirname, "public")));
 
-app.use("/blogs/:blogid", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/users", "blogs-details.html"));
-});
-
-app.use("/blogs", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/users", "blogs.html"));
-});
-
-app.use("/", (req, res) => {
-  res.sendFile(path.join(__dirname, "views/users", "index.html"));
-});
+app.use(adminRoutes);
+app.use(userRoutes);
 
 app.listen(3000, () => console.log("Listening on port 3000!"));
