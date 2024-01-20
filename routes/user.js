@@ -2,7 +2,16 @@ const express = require("express");
 
 const router = express.Router();
 
-const path = require("path");
+const data = {
+  title: "Popular courses",
+  categories: [
+    "Web Development",
+    "Programming",
+    "Mobile Development",
+    "Data Analysis",
+    "Office Apps",
+  ],
+};
 
 router.use("/blogs/:blogid", (req, res) => {
   res.render("users/blogs-details");
@@ -13,7 +22,7 @@ router.use("/blogs", (req, res) => {
 });
 
 router.use("/", (req, res) => {
-  res.render("users/index");
+  res.render("users/index", data);
 });
 
 module.exports = router;
