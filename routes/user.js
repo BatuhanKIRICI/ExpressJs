@@ -11,6 +11,32 @@ const data = {
     "Data Analysis",
     "Office Apps",
   ],
+  blogs: [
+    {
+      blogid: 1,
+      title: "Complete Web Development",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
+      image: "1.jpeg",
+      homePage: true,
+    },
+    {
+      blogid: 2,
+      title: "Python",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
+      image: "2.jpeg",
+      homePage: true,
+    },
+    {
+      blogid: 3,
+      title: "JavaScript",
+      description:
+        "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, aut.",
+      image: "3.jpeg",
+      homePage: false,
+    },
+  ],
 };
 
 router.use("/blogs/:blogid", (req, res) => {
@@ -18,7 +44,7 @@ router.use("/blogs/:blogid", (req, res) => {
 });
 
 router.use("/blogs", (req, res) => {
-  res.render("users/blogs");
+  res.render("users/blogs", data);
 });
 
 router.use("/", (req, res) => {

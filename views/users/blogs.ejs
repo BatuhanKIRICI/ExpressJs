@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/libs/bootstrap/dist/css/bootstrap.min.css" />
-    <title>Document</title>
+    <title><%=title%> - Blogapp</title>
   </head>
   <body>
     <nav class="navbar navbar-dark bg-primary navbar-expand-lg">
@@ -21,90 +21,35 @@
       <div class="row">
         <div class="col-md-3">
           <div class="list-group">
-            <a href="" class="list-group-item list-group-item-action active"
-              >Web Development
-            </a>
+            <%categories.forEach((item)=>{ %>
             <a href="" class="list-group-item list-group-item-action"
-              >Mobile Development
+              ><%=item%>
             </a>
-            <a href="" class="list-group-item list-group-item-action"
-              >Data Analysis
-            </a>
-            <a href="" class="list-group-item list-group-item-action"
-              >Programming
-            </a>
+            <% })%>
           </div>
         </div>
         <div class="col-md-9">
-          <h1 class="h3 mb-3">Blogs List</h1>
+          <h1 class="h3 mb-3"><%=title%></h1>
+
+          <% blogs.forEach(item=>{ %>
           <div class="card mb-3">
             <div class="row">
               <div class="col-md-3">
-                <img src="/static/images/1.jpeg" class="img-fluid" alt="" />
+                <img
+                  src="/static/images/<%=item.image%>"
+                  class="img-fluid"
+                  alt=""
+                />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Complete Web Development</h5>
-                  <p class="card-text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
-                    adipisci aperiam nobis vitae quae veniam inventore nulla
-                    illum ullam corrupti.
-                  </p>
+                  <h5 class="card-title"><%=item.title%></h5>
+                  <p class="card-text"><%=item.description%></p>
                 </div>
               </div>
             </div>
           </div>
-          <div class="card mb-3">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="/static/images/2.jpeg" class="img-fluid" alt="" />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">Python</h5>
-                  <p class="card-text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
-                    adipisci aperiam nobis vitae quae veniam inventore nulla
-                    illum ullam corrupti.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="/static/images/3.jpeg" class="img-fluid" alt="" />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">JavaScript</h5>
-                  <p class="card-text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
-                    adipisci aperiam nobis vitae quae veniam inventore nulla
-                    illum ullam corrupti.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="card mb-3">
-            <div class="row">
-              <div class="col-md-3">
-                <img src="/static/images/4.jpeg" class="img-fluid" alt="" />
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <h5 class="card-title">React</h5>
-                  <p class="card-text">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ut
-                    adipisci aperiam nobis vitae quae veniam inventore nulla
-                    illum ullam corrupti.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
+          <% }) %>
           <nav>
             <ul class="pagination justify-content-center">
               <li class="page-item">
